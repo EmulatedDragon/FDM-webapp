@@ -6,8 +6,8 @@ E=210.0            #taken in giga pascal
 I=106.67        #taken in (X 10^-9) m^4    
 L=1
 h=L/(nodes+1)
-A = numpy.zeros((nodes, nodes))
-B = numpy.ones((1,nodes))
+A = np.zeros((nodes, nodes))
+B = np.ones((1,nodes))
 
 A[0,0]=5            #first row
 A[0,1]=-4
