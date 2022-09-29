@@ -1,7 +1,3 @@
-from xml.dom.minidom import Element
-import numpy
-
-
 import numpy as np
 
 nodes = 4    #the number of nodes excluding the first and last node
