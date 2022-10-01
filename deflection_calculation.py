@@ -5,6 +5,9 @@ def deflection_calculate(Loads,nodes,E,I,L):
     #I=106.67        #taken in (X 10^-9) m^4    
     #L=1
 
+    I/=1000  #give I is in mm^4 to convert to m^4 we divide by 10^12 but we are taking unit of 10^-9 so it is 10^-3
+
+    L/=1000
     last=nodes-1
     h=L/(nodes+1)
     A = np.zeros((nodes, nodes))
@@ -39,7 +42,7 @@ def deflection_calculate(Loads,nodes,E,I,L):
             A[i,i+2]=1
 
     Y=np.matmul(B,np.linalg.inv(A))
+    Y*=(h*h*h)*1000/(E*I)
     #for i in range(nodes):
-        #print(Y[0,i]*(h*h*h)/(E*I))             #deviation from real values is half times
-        #print(Y[0,i])
+        #print(Y[0,i])             #deviation from real values is half times
     return np.transpose(Y)
