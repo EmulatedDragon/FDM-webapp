@@ -137,6 +137,6 @@ if  to_solve:
     deflection,
     columns=['Deflection'])
     st.line_chart(chart_data)
-    chart_data.to_csv("deflection.csv")
+    chart_data.to_csv("src\deflection.csv")
     endc1,endc2,endc3=st.columns(3)
-    endc2.download_button("D O W N L O A D (values of deflection at all nodes)",'deflection.csv')
+    endc2.download_button("D O W N L O A D (values of deflection at all nodes)",'src\deflection.csv')
