@@ -34,7 +34,7 @@ The finite difference method (FDM) is an approximate method for solving partial 
 It has been used to solve a wide range of problems.
 """)
 st.sidebar.write("The following Differential Equation is used to calculate deflection in a Beam:")
-st.sidebar.image('src\Equation.jpg',"",200)
+st.sidebar.image('Equation.jpg',"",200)
 st.sidebar.title(":star:CREDITS :")
 st.sidebar.subheader("PREETHAM A :v:")
 st.sidebar.write("check out my :link:[linkedIn](https://www.linkedin.com/in/preetham-a-289628225/)")
@@ -88,21 +88,21 @@ with col_parameter:
         options=["Circle","Pipe","Rectangle","I Beam"]
         )
     if cross_section =="Circle":
-        st.image('.\src\Circle_crossection.jpg',"",250)
+        st.image('Circle_crossection.jpg',"",250)
         d=st.number_input("Give d:",10)
         st.session_state.Moment_of_inertia=np.pi*d*d*d*d/32
     elif cross_section=="Pipe":
-        st.image('.\src\Pipe_crossection.jpg',"",250)
+        st.image('Pipe_crossection.jpg',"",250)
         d=st.number_input("Give d :")
         t=st.number_input("Give t :")
         st.session_state.Moment_of_inertia=np.pi*d*d*d*t/4
     elif cross_section=="Rectangle":
-        st.image('.\src\Rectangle_crossection.jpg',"",250)
+        st.image('Rectangle_crossection.jpg',"",250)
         b=st.number_input("Give b :")
         h=st.number_input("Give h :")
         st.session_state.Moment_of_inertia=b*h*(b*b+h*h)/12
     elif cross_section=="I Beam":
-        st.image('.\src\I_beam_crossection.jpg',"",250)
+        st.image('I_beam_crossection.jpg',"",250)
         b=st.number_input("Give b (b1=b2=b) :")
         t=st.number_input("Give t (t1=t2=t3=t) :")
         st.session_state.Moment_of_inertia=b*b*t*t
@@ -137,6 +137,6 @@ if  to_solve:
     deflection,
     columns=['Deflection'])
     st.line_chart(chart_data)
-    chart_data.to_csv(".\src\deflection.csv")
+    chart_data.to_csv("deflection.csv")
     endc1,endc2,endc3=st.columns(3)
-    endc2.download_button("D O W N L O A D (values of deflection at all nodes)",'.\src\deflection.csv')
+    endc2.download_button("D O W N L O A D (values of deflection at all nodes)",'deflection.csv')
