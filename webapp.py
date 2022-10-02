@@ -34,7 +34,7 @@ The finite difference method (FDM) is an approximate method for solving partial 
 It has been used to solve a wide range of problems.
 """)
 st.sidebar.write("The following Differential Equation is used to calculate deflection in a Beam:")
-st.sidebar.image('/src/Equation.jpg',"",200)
+#st.sidebar.image('/src/Equation.jpg',"",200)
 st.sidebar.title(":star:CREDITS :")
 st.sidebar.subheader("PREETHAM A :v:")
 st.sidebar.write("check out my :link:[linkedIn](https://www.linkedin.com/in/preetham-a-289628225/)")
