@@ -1,13 +1,10 @@
-from faulthandler import disable
 import pandas as pd
-import plotly.express as px
 import streamlit as st 
 import numpy as np
-import time
 import deflection_calculation as df
 
 #streamlit run webapp.py
-st.set_page_config(page_title="Beam Deflection using FDM", page_icon=":bar_chart:", layout="wide")
+st.set_page_config(page_title="Beam Deflection using FDM", page_icon=":chart_with_upwards_trend:", layout="wide")
 
 # ---- Variables ----
 
@@ -29,9 +26,24 @@ Materials = {
     "Aluminium": 70,
     "Zinc": 96.5
 }
+# ---- SIDEBAR ----
+st.sidebar.title(':closed_book:ABOUT FDM :')
+st.sidebar.write("""
+This was calculated using the method of Finite Difference Method.
+The finite difference method (FDM) is an approximate method for solving partial differential equations.
+It has been used to solve a wide range of problems.
+""")
+st.sidebar.write("The following Differential Equation is used to calculate deflection in a Beam:")
+st.sidebar.image('src\Equation.jpg',"",200)
+st.sidebar.title(":star:CREDITS :")
+st.sidebar.subheader("PREETHAM A :v:")
+st.sidebar.write("check out my :link:[linkedIn](https://www.linkedin.com/in/preetham-a-289628225/)")
+st.sidebar.write("check out my :link:[Github](https://github.com/EmulatedDragon)")
+
+
 
 # ---- MAINPAGE ----
-st.title(":bar_chart: Line Deflection using FDM")
+st.title(":chart_with_upwards_trend: Line Deflection using FDM")
 
 col_data_input, col_parameter = st.columns(2)
 
@@ -108,9 +120,9 @@ st.markdown("""---""")
 final_col1,final_col2,final_col3,final_col4,final_col5,final_col6,final_col7 =st.columns(7)
 to_solve=final_col2.checkbox("S O L V E")
 if final_col4.button("R E R U N"):
-    st.snow()
-final_col6.button("C R E D I T S")
-
+    st.warning("RELOAD")
+if final_col6.button("C R E D I T S"):
+    st.success("OPEN SIDEBAR")
 st.markdown("""---""")
 if  to_solve:
     deflection=np.array(df.deflection_calculate(
